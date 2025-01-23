@@ -71,14 +71,14 @@ const DataTable = <TData, TValue>({
             table.getRowModel().rows.map((row, rowIndex) => (
               <TableRow
                 key={row.id}
-                data-state={row.getIsSelected() && "selected"}
+                className="transition duration-200 ease-in-out hover:brightness-95"
               >
                 {row.getVisibleCells().map((cell, index) => (
                   <TableCell
                     key={cell.id}
                     style={{ width: cell.column.getSize() }}
                     className={`${index === 0 ? "sticky left-0 z-10 " : ""} ${
-                      rowIndex % 2 === 0 ? "bg-gray-200" : "bg-gray-100"
+                      rowIndex % 2 === 0 ? "bg-green-50" : "bg-green-100"
                     }`}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
